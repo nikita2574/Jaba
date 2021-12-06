@@ -1,3 +1,4 @@
+1)
 import java.util.Scanner;
 
 class Main {
@@ -17,12 +18,13 @@ class Main {
     }
 }
 
+2)
 import java.util.Scanner;
 
 class Main {
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
-    System.out.print("Введите возраст - ");
+    System.out.print("Введите возраст: ");
         int age = scanner.nextInt();
         if((age <= 17)&&(age >= 13)) {
             System.out.println("Подходишь");
@@ -33,4 +35,56 @@ class Main {
   }
 }
 
+3)
+import java.util.Scanner;
+
+class Main {
+  public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+   System.out.print("Введите два числа: ");
+        int a = scanner.nextInt() % 10;
+        int b = scanner.nextInt() % 10;
+        if(a == b){
+            System.out.println("Верное");
+        } else
+        {
+            System.out.println("Не верное");
+        }
+    }
+}
+
+4)
+import java.util.Scanner;
+
+class Main {
+  public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+   System.out.print("Введите три числа: ");
+        int a = scanner.nextInt();
+        int b = scanner.nextInt();
+        int c = scanner.nextInt();
+        int Max = a;
+        if (b > Max) {
+            Max = b;
+        }
+        if (c > Max) {
+            Max = c;
+        }
+        System.out.println("Максимальное из введенных: " + Max);
+    }
+}
+
+7)
+import java.util.Scanner;
+
+class Main {
+  public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+    System.out.print("Введите строку: ");
+        String a = scanner.nextLine();
+        String b = "^\\d\\d(:)\\d\\d(:)\\d\\d$";
+        boolean c = a.matches(b);
+        System.out.println(c);
+    }
+}
 
