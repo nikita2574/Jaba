@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+class Main {
+  public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+    System.out.print("Введите температуру воды: ");
+        int temp = scanner.nextInt();
+        if(temp > 100){
+            System.out.println("Пар");
+        } else
+            if(temp < 0){
+                System.out.println("Лед");
+            }
+            else{
+                System.out.println("Жидкое");
+            }
+    }
+}
+
+import java.util.Scanner;
+
+class Main {
+  public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+    System.out.print("Введите возраст - ");
+        int age = scanner.nextInt();
+        if((age <= 17)&&(age >= 13)) {
+            System.out.println("Подходишь");
+        } else 
+    {
+            System.out.println("Не подходишь");
+    }
+  }
+}
+
+
