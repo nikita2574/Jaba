@@ -74,6 +74,27 @@ class Main {
     }
 }
 
+5)
+
+import java.util.Scanner;
+
+class Main {
+  public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+    System.out.print("Строка:");
+        String a = scanner.nextLine();
+        char CharAt = a.CharAt(a.length()-1);
+        String a_b = Character.toString(CharAt);
+        a_b += a;
+        a_b += CharAt;
+    System.out.print(a_b);
+    }
+}
+
+6)
+
+
+
 7)
 import java.util.Scanner;
 
@@ -88,3 +109,37 @@ class Main {
     }
 }
 
+9)
+import java.util.Scanner;
+
+class Main {
+  public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+    System.out.print("Введите первый массив: ");
+        int a = scanner.nextInt();
+        int arr[] = new int[a];
+        for(int c = 0; c < a; c++){
+            System.out.print("[" + c + "] - ");
+            arr[c] = scanner.nextInt();
+        }
+        System.out.println(" ");
+        System.out.print("Введите второй массив: ");
+        int b = scanner.nextInt();
+        int mass[] = new int[a + b];
+        for(int c = a; c < a + b; c++){
+            System.out.print("[" + c + "] - ");
+            mass[c] = scanner.nextInt();}
+        int a_mass[] = new int[a + b];
+
+        for(int c = 0; c < a; c++){
+            a_mass[c] = arr[c];}
+        for(int c = a; c < a + b; c++){
+            a_mass[c] = mass[c];}
+        System.out.print("массив -");
+        for(int c = 0; c < a + b; c++){
+            System.out.print(" " + a_mass[c]);
+        }
+    }
+} 
+
+12)
