@@ -93,7 +93,26 @@ class Main {
 
 6)
 
-
+import java.util.Scanner;
+class Main {
+  public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+       System.out.print("Строка: ");
+        String a = scanner.nextLine();
+        char CharAt;
+        char abc;
+        for(int b = 1; b <= a.length()-1; ++b) {
+            CharAt = a.charAt(b);
+            abc = CharAt;
+            CharAt = a.charAt(b-1);
+            if(abc == CharAt){
+                System.out.println(true);
+                return;
+            }
+        }
+        System.out.println(false);
+    }
+}
 
 7)
 import java.util.Scanner;
@@ -108,6 +127,10 @@ class Main {
         System.out.println(c);
     }
 }
+
+8)
+
+
 
 9)
 import java.util.Scanner;
