@@ -165,7 +165,121 @@ class Main {
     }
 } 
 
-12)
+13)
+import java.util.Scanner;
+import java.util.concurrent.ThreadLocalRandom;
+import java.util.concurrent.TimeUnit;
+
+public class Main {
+  public static void main(String[] args) {
+        int player = 0;
+        int dealer = 0;
+        int hit_card;
+        int hit_dealer;
+        int hit_player;
+
+        Scanner scanner = new Scanner(System.in);
+
+        hit_card = ThreadLocalRandom.current().nextInt(2, 11 + 1);
+        player += hit_card;
+
+        System.out.println("Дилер дает вам первую карту: " + hit_card);
+
+        hit_card = ThreadLocalRandom.current().nextInt(2, 11 + 1);
+        player += hit_card;
+
+        System.out.println("Дилер дает вам вторую карту: " + hit_card); /* принт получается */
+        
+        /* TimeUnit.SECONDS.sleep(1); а вот таймер не получается */
+        System.out.println(" "); 
+
+        hit_card = ThreadLocalRandom.current().nextInt(2, 11 + 1);
+        dealer += hit_card;
+
+        System.out.println("Дилер берет себе первую карту: " + hit_card);
+
+        hit_card = ThreadLocalRandom.current().nextInt(2, 11 + 1);
+        dealer += hit_card;
+
+        System.out.println("Дилер берет себе вторую карту: " + hit_card);
+
+        while(true){
+            System.out.println(" ");
+            System.out.println("Сумма ваших карт: " + player);
+            System.out.println(" ");
+            System.out.println("Сумма карт дилера: " + dealer);
+            System.out.println(" ");
+            System.out.println("Дилер предлагает взять еще карту. Если вы согласны - введите 1, Если нет - введите 2");
+            hit_player = scanner.nextInt();
+            if(hit_player != 1){
+
+            }else{
+                hit_card = ThreadLocalRandom.current().nextInt(2, 11 + 1);
+                player += hit_card;
+                System.out.println("Дилер выдал вам карту: " + hit_card);
+                if(player == 21){
+                    System.out.println("Black Jack вы победили!!!");
+                    return;
+                }else if(player > 21){
+                    System.out.println("Сумма ваших карт: " + player + ". Вы проиграли. ");
+                    return;
+                }
+            }
+
+            if(dealer >= 18){
+                hit_dealer = ThreadLocalRandom.current().nextInt(1, 2 + 1);
+                if(hit_dealer == 1){
+                    hit_card = ThreadLocalRandom.current().nextInt(2, 11 + 1);
+                    dealer += hit_card;
+                    System.out.println("Дилер взял себе карту: " + dealer);
+                    if(dealer == 21){
+                        System.out.println("Black Jack, вы проиграли.");
+                        return;
+                    }else if(dealer > 21){
+                        System.out.println("Сумма карт дилера " + dealer + ". Вы выиграли!!!");
+                        return;
+                    }
+                }else{
+                    System.out.println("Дилер не стал брать карту");
+                    if(hit_player != 1){
+                        if(player == dealer){
+                            System.out.println("Ничья!");
+                            return;
+                        }else if(player < dealer){
+                            System.out.println("Сумма карт дилера больше - " + dealer + ". Вы проиграли.");
+                            return;
+                        }else{
+                            System.out.println("Сумма карт дилера меньше - " + dealer + ". Вы выиграли!!!");
+                            return;
+                        }
+                    }
+                }
+            }else{
+                hit_card = ThreadLocalRandom.current().nextInt(2, 11 + 1);
+                dealer += hit_card;
+                System.out.println("Дилер взял себе карту: " + hit_card);
+                System.out.println(" ");
+                if(dealer == 21){
+                    System.out.println("Black Jack, Вы проиграли.");
+                    return;
+                }else if(dealer > 21){
+                    System.out.println("Сумма карт дилера: " + dealer + ". Вы выиграли!!!");
+                    return;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
